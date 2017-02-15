@@ -1,11 +1,6 @@
 # name: spaceship
 # A fish theme with spaceships in mind
 
-
-## Set this options in your config.fish (if you want to)
-# set -g theme_display_user yes
-# set -g default_user default_username
-
 function fish_right_prompt # -d "Right side prompt message"
     set -l last_status $status
     set -l red        (set_color red)
@@ -14,8 +9,8 @@ function fish_right_prompt # -d "Right side prompt message"
 
     # Turn prompt red if last command failed
     if test $last_status -ne 0
-        echo -n -s $red   "echo -en (date +%H:%M:%S)" $normal
+        echo -n -s $red   (date +%H:%M:%S) $normal
     else
-        echo -n -s $green "echo -en (date +%H:%M:%S)" $normal
+        echo -n -s $green (date +%H:%M:%S) $normal
     end
 end
